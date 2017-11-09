@@ -1,0 +1,43 @@
+PROGRAMME Pendu
+
+//BUT:Pouvoir jouer au jeu du Pendu
+//ENTREE:Le mot entré
+//SORTIE:Si le joueur à gagné ou non
+
+VAR
+	mot_entre:CHAINE
+	mot_masque:CHAINE
+	caractere,essais,longueur_mot,recommencer:CHAINE
+
+DEBUT
+	REPETER
+	essais_restants<-10
+	FAIRE
+		ECRIRE("Bienvenue dans le jeu du pendu")
+		ECRIRE("Veuillez entrer un mot à deviner")
+		LIRE(mot_saisi)
+		longueur_mot<-longueur(mot_entre)
+	POUR i ALLANT DE 1 A longueur_mot AU PAS DE 1
+	FAIRE
+		mot_masque[i]<-'-'
+	FINPOUR
+	FAIRE 
+		ECRIRE("Veuillez entrer un caractere")
+		LIRE(caractere)
+		POUR i ALLANT DE 1 A longueur_mot AU PAS DE 1
+		FAIRE
+			SI (mot_entre[i]=caractere)
+				mot_masque[i]=caractere
+			FINSI
+		FINPOUR
+		essais<-essais-1
+		ECRIRE("Nombre d'essais:",essais)
+	TANT QUE (essais>0 ET mot_entre <> mot_masque)
+	SI (mot_entre = mot_masque)
+		ECRIRE("Gagné")
+	SINON 
+		ECRIRE("Perdu")
+	FINSI
+	ECRIRE("Voulez-vous recommencer?")
+	LIRE(recommencer)
+	TANT QUE recommencer=1;

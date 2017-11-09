@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1510228393 source:c:\users\florian\desktop\c\entrainement\pendu_c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
